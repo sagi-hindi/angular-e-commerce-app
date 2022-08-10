@@ -1,0 +1,45 @@
+<div  class="container">
+    <div class="cart-items" #cartItem>
+    <h1>Cart Items</h1>
+    <ng-container *ngIf="cartItems">
+    <app-order-items *ngFor="let item of cartItems" [item]="item"></app-order-items>
+</ng-container>
+
+    <div class="total-price">Total Price {{totalPrice | currency}}</div>
+
+    </div>
+    
+
+    <div *ngIf="user" class="order-details" >
+    <form [formGroup]="orderForm" (ngSubmit)="sendOrder()" >
+        <h1>Order</h1>
+        <hr>
+        <h2>Shipping Details</h2>
+        <hr>
+        <label>City</label>
+        <input (dblclick)="doubleClick($event)" [formControl]="cityControl" name="city" type="text" />
+        <span *ngIf="cityControl.invalid && cityControl.touched ">city is required</span>
+
+        <label>Street</label>
+        <input (dblclick)="doubleClick($event)" [formControl]="streetControl" name="street" type="text" />
+        <span *ngIf="streetControl.invalid && streetControl.touched">Street is required</span>
+
+
+        <label>Shipping Date</label>
+        <input name="date" type="date" [min]="todayDate" [formControl]="dateControl"/>
+        <span *ngIf="dateControl.invalid && dateControl.touched">Shipping Date is required</span>
+
+
+        <label>Credit Card</label>
+        <input name="creditCard" type="number" [formControl]="creditCardControl"/>
+        <span *ngIf="creditCardControl.invalid && creditCardControl.touched">Credit Card not valid</span>
+
+
+
+        <button [disabled]="orderForm.invalid">Order</button>
+    </form>
+</div>
+
+
+
+</div>

@@ -1,0 +1,18 @@
+<p>
+  <ng-container>
+
+    <mat-toolbar style="background-color: #C7D0D5;">    
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon (click)="display()">add_shopping_cart</mat-icon>
+      </button>
+      <span class="header">Snap Shop</span>
+      <span class="example-spacer"></span>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a routerLink="/products" routerLinkActive="active">Products</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+
+      <app-auth-menu></app-auth-menu>
+
+    </mat-toolbar>
+  </ng-container>
+  </p>

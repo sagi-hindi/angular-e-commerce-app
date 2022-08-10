@@ -1,0 +1,9 @@
+
+    <div class="card">
+        <mat-icon (click)="edit(product._id)" class="edit" *ngIf="isAdmin">border_color</mat-icon>
+        <img [src]="imageUrl + product.imageName"/>
+        <h2>{{product.name}}</h2>
+        <h3>{{product.price | currency}}   </h3>
+        <button (click)="openPopUp()" class="cart-button">Add To Cart</button>
+    </div>
+

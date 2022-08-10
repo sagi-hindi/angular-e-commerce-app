@@ -1,0 +1,37 @@
+.container{
+    border:1px solid #ccc;
+    height: 70px;
+    display: flex;
+    min-width:100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position:relative;
+    min-width: 262px;
+    justify-content: flex-start;
+
+
+
+}
+
+span{
+    margin-left: 50px;
+    align-items:center;
+    float: right;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+h3{
+margin-top: 15px;
+float: left;
+font-weight: bold;
+justify-content: center;
+
+}
+
+.img{
+    height: 50px;
+    width:60px;
+    float: left;
+
+}

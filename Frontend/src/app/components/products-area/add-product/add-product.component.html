@@ -1,0 +1,28 @@
+<div *ngIf="product" class="container">
+<form (ngSubmit)="addProduct()" #addForm="ngForm">
+    <h2>add Product</h2>
+
+    <label >Select Category:</label>
+    <select  name="categoryId" [(ngModel)]="product.categoryId" required  #categoryId="ngModel">
+        <option selected disabled>Select</option>  
+            <option  *ngFor='let c of categories'  [value]="c._id">{{c.name}}</option>
+      </select>
+        <span *ngIf="categoryId.errors?.['required'] && categoryId.touched">Category is required</span>
+
+    <label>Name:</label>
+    <input type="text" name="name"[(ngModel)]="product.name" [minlength]="4" required #name="ngModel"/>
+    <span *ngIf="name.errors?.['required'] && name.touched">Name is required</span>
+    <span *ngIf="name.errors?.['minlength'] && name.touched">Name too short</span>
+
+    <label>price:</label>
+    <input type="number" name="price" [(ngModel)]="product.price" [step]="0.01" required #price="ngModel"/>
+    <span *ngIf="price.errors?.['required'] && price.touched">Price is required</span>
+
+
+    <label>image:</label>
+    <input type="file" name="image" required #imageRef/>
+
+    <button [disabled]="addForm.invalid">Add Product</button>
+</form>
+
+</div>

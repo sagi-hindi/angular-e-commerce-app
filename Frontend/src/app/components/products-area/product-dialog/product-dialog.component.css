@@ -1,0 +1,36 @@
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+input{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+button{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+.close{
+    /* visibility: hidden; */
+    position: absolute;
+    top: -15px;
+    right:-8px;
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+}
+

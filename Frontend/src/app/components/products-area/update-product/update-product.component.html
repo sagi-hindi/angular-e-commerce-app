@@ -1,0 +1,15 @@
+<div class="container">
+    <form *ngIf="updateForm" [formGroup]="updateForm"  (ngSubmit)="update()">
+        <h1>Update Product</h1>
+        <span>Product name:</span>
+        <input type="text" [formControl]="nameInput"/>
+
+        <span>Product price:</span>
+        <input type="number" step="0.01" [formControl]="priceInput"/>
+
+        <span>Product image:</span>
+        <input type="file" [formControl]="imageInput" #imageBox /> 
+        
+        <button>Update</button>
+    </form>
+</div>

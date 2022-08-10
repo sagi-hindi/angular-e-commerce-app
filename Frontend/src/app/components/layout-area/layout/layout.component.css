@@ -1,0 +1,32 @@
+div {
+    display: grid;
+    grid-template-rows: 10% 87% 5%; 
+    height: 100%;
+    width:100%;
+    box-sizing: border-box;
+
+}
+
+
+
+header {
+background-color: #C7D0D5;
+color: #C7D0D5;
+padding: 10px 5px 10px 5px;
+
+
+}
+    
+main {
+    overflow: auto;
+    background-color: #F5F5F5;
+
+
+}
+    
+footer {
+    float: bottom;
+    padding: 2px;
+    background-color: #C7D0D5;
+}
+

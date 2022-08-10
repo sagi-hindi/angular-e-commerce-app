@@ -1,0 +1,29 @@
+p {
+    padding: 0px;
+
+}
+
+.header{
+   margin: 0px auto 0px 10px;
+   font-weight: bold; 
+   font-size: 30px;
+}
+
+ a {
+    margin-right: 70px;
+    font-size: 20px;
+    cursor: pointer;
+}
+a:hover {
+    font-size: 30px;
+    background-color:#F5F5F5;
+    padding: 5px;
+    border-radius:15px 50px 30px;
+}
+
+.active {
+        font-size: 30px;
+        background-color:#FF7148;
+        padding: 5px;
+        border-radius:15px 50px 30px;
+}

@@ -1,0 +1,22 @@
+<div>
+        <div class="menu" >
+            <a (click)="categoryFilter($event)" [id]="1">All Products</a>
+            <a (click)="categoryFilter($event)" *ngFor="let c of categories" [id]="c._id" >{{c.name}}</a>
+        </div>
+        
+        <ng-container *ngIf="isAdmin">
+            <button class="add" routerLink="/add-product" routerLinkActive="active">Add Product</button>
+        </ng-container>
+        
+        <app-shopping-cart class="cart" *ngIf="nav.visible"></app-shopping-cart>
+        <app-search-products class="search" (searchTextChange)="onSearchTextEntered($event)"></app-search-products>
+        
+        <div class="cards">
+            <ng-container *ngFor="let p of products">
+                <div *ngIf="searchText === '' ||  p.name.toLowerCase().includes(searchText) ">
+                    <app-product-card *ngIf="p.categoryId === categoryId || categoryId === isActive"  [product]="p"></app-product-card>
+                </div>
+            </ng-container>
+        </div>
+
+</div>

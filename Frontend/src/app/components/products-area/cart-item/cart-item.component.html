@@ -1,0 +1,8 @@
+<div *ngIf="product">
+    <img class="img" [src]="imageUrl + product?.imageName"/>
+    <h3>{{product?.name}}</h3>
+    <span>Quantity: {{item.quantity}}</span>
+    <span>Price: {{item.totalPrice | currency}}</span>
+    <mat-icon (click)="deleteItem(item._id)" class="delete">delete_outline</mat-icon>
+
+</div>

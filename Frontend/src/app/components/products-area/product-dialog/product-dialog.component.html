@@ -1,0 +1,9 @@
+<div>
+    <h2>quantity</h2>
+    <input type="number" min="1" max="200" [(ngModel)]="quantity"/>
+    <button type="button" (click)="handleDialog($event)" mat-raised-button color="primary">Add To Cart</button>
+    <span type="button" (click)="closeDialog()"><mat-icon  class="close">clear</mat-icon> </span>
+
+
+</div>
+

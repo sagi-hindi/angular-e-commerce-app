@@ -1,0 +1,63 @@
+<div *ngIf="!isSubmit"  class="container">
+    <form (ngSubmit)="submit()" #firstForm="ngForm">
+        <h1>Register</h1>
+        
+        <label>National ID:</label>
+        <input class="form-control-material" type="number" name="idNumber" [(ngModel)]="userRegister.idNumber" min="10000" required #idNumber="ngModel"/>
+        <span *ngIf="idNumber.touched && idNumber.errors?.['required']">Missing National ID.</span>
+        <span *ngIf="idNumber.touched && idNumber.errors?.['min']">National ID too short.</span>
+        <span *ngIf="idNumber.touched && idNumber.errors?.['max']">National ID too long.</span>
+
+
+        
+        <label>Email:</label>
+        <input  class="form-control-material" type="text" name="email" [(ngModel)]="userRegister.email" [email]="true" required #email="ngModel"/>
+        <span *ngIf="email.touched && email.errors?.['required']">Missing email</span>
+        <span *ngIf="email.errors?.['email']">email address is not valid.</span>
+
+
+        
+        <label>Password:</label>
+        <input  class="form-control-material" type="password" name="password" [(ngModel)]="userRegister.password" minlength="5" required #password="ngModel"/>
+        <span *ngIf="password.touched && password.errors?.['required']">Missing password</span>
+        <span *ngIf="password.touched && password.errors?.['minlength']">Password too short.</span>
+        <span *ngIf="password.touched && confirmPassword.touched && password?.value !== confirmPassword?.value">Password not match.</span>
+
+
+
+        <label>Confirm Password:</label>
+        <input class="form-control-material" type="password" name="confirmPassword" minlength="5" [(ngModel)]="userRegister.confirmPassword" required #confirmPassword="ngModel"/>
+        <span *ngIf="confirmPassword.touched && confirmPassword.errors?.['required']">Confirm password</span>
+        <span *ngIf="confirmPassword.touched && confirmPassword.errors?.['minlength']">Password too short.</span>
+        <span *ngIf="password.touched && confirmPassword.touched && confirmPassword.value !== password?.value" >Password not match.</span>
+
+        
+        <button [disabled]="firstForm.invalid" class="btn btn-primary btn-ghost">Continue</button>
+    </form>
+
+</div>
+
+<div *ngIf="isSubmit" class="container">
+    <form (ngSubmit)="newSubmit()" #lastForm="ngForm">
+        <h1>Register</h1>
+        <label>First Name:</label>
+        <input  class="form-control-material" type="text" name="firstName" [(ngModel)]="user.firstName" required #userFirstName="ngModel"/>
+        <span *ngIf="userFirstName.touched && userFirstName.errors?.['required']">Missing First Name.</span>
+        
+        <label>Last Name:</label>
+        <input class="form-control-material" type="text" name="lastName" [(ngModel)]="user.lastName" required #userLastName="ngModel"/>
+        <span *ngIf="userLastName.touched && userLastName.errors?.['required']">Missing Last Name.</span>
+        
+        <label>City:</label>
+        <input class="form-control-material" type="text" name="city" [(ngModel)]="user.city" required #userCity="ngModel" />
+        <span *ngIf="userCity.touched && userCity.errors?.['required']">Missing City.</span>
+        
+        <label>Street:</label>
+        <input  class="form-control-material" type="text" name="street" [(ngModel)]="user.street" required #userStreet="ngModel" />
+        <span *ngIf="userStreet.touched && userStreet.errors?.['required']">Missing Street.</span>
+        
+        
+        <button [disabled]="lastForm.invalid" class="btn btn-primary btn-ghost">register</button>
+    </form>
+
+</div>

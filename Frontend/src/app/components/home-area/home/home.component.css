@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background-image: url("../../../../assets/images/shop-home.png");
+    background-repeat: no-repeat;
+    background-position: 100% 10%;
+    float: left;
+
+
+}
+.text {
+    color: #FF7148;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-top: 10%;
+    margin-right: 60%;
+
+}
+.text > h1 {
+    font-size: 30px;
+    border-bottom: 4px solid #93B1C6;
+
+    
+}
+
+p{
+    width: 500px;
+    font: 400 20px/30px Roboto,"Monospace";
+}
+
+button{
+    background-color: #93B1C6;
+    color: white;
+}
+@media screen and (max-width: 800px) {
+    .text {
+        margin-top: 10%;
+        margin-right: 0%;
+        margin-left: 30%;
+    }
+    p{
+        width: 100%;
+        font: 400 20px/30px Roboto,"Monospace";
+    }
+
+}
+    
+
+
+
+
